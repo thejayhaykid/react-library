@@ -1,0 +1,13 @@
+@import './darkColors';
+@import './lightColors';
+@import './header';
+
+@mixin theme($light-theme: true) {
+    @if $light-theme {
+        background: lighten($primary-color, 100%);
+        color: darken($text-color, 100%);
+    } @else {
+        background: darken($primary-color, 100%);
+        color: lighten($text-color, 100%);
+    }
+}
