@@ -3,29 +3,35 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
   } from "react-router-dom";
+import { Navbar, NavbarGroup, Alignment, NavbarHeading, NavbarDivider, Classes, Button } from "@blueprintjs/core";
 
-  export default function LibRouter() {
-    return (
-      <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-            </ul>
-          </nav>
-  
-          {/* A <Switch> looks through its children <Route>s and
-              renders the first one that matches the current URL. */}
-          <Switch>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-    );
-  }
+import { Home } from '../containers/Home';
+import { Lost } from '../containers/Lost';
+
+export default function LibRouter() {
+  return (
+    <Router>
+      <div>
+        <Navbar >
+          <NavbarGroup align={Alignment.LEFT}>
+            <NavbarHeading>Home Media Library</NavbarHeading>
+            <NavbarDivider />
+            <Link to="/">
+              <Button className={Classes.MINIMAL} icon="home" text="Home"/>
+            </Link>
+          </NavbarGroup>
+        </Navbar>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="*">
+            <Lost />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
