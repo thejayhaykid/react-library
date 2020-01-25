@@ -5,7 +5,16 @@ import {
     Route,
     Link,
   } from "react-router-dom";
-import { Navbar, NavbarGroup, Alignment, NavbarHeading, NavbarDivider, Classes, Button } from "@blueprintjs/core";
+import { Navbar, 
+  NavbarGroup, 
+  Alignment, 
+  NavbarHeading, 
+  NavbarDivider, 
+  Classes, 
+  Button, 
+  Popover,
+  Position 
+} from "@blueprintjs/core";
 
 import { Home } from '../containers/Home';
 import { Lost } from '../containers/Lost';
@@ -13,33 +22,46 @@ import { Movies } from '../containers/Movies';
 import { TVShows } from "../containers/TVShows";
 import { Games } from "../containers/Games";
 import { Books } from "../containers/Books";
+import { UserMenu } from "../components/users/UserMenu";
 
 export default function LibRouter() {
+  let darkMode = true;
+  let menuProps = {
+    SignedIn: true,
+    DarkMode: darkMode
+  }
+  const baseProps = { content: <UserMenu props={menuProps}/>, position: Position.BOTTOM };
+
   return (
     <Router>
       <div>
-        <Navbar >
+        <Navbar className={ darkMode ? Classes.DARK : null } >
           <NavbarGroup align={Alignment.LEFT}>
             <NavbarHeading>Home Media Library</NavbarHeading>
             <NavbarDivider />
             <Link to="/">
-              <Button className={Classes.MINIMAL} icon="home" text="Home"/>
+              <Button minimal={true} icon="home" text="Home"/>
             </Link>
             <Link to="/movies">
-              <Button className={Classes.MINIMAL} icon="film" text="Movies"/>
+              <Button minimal={true} icon="film" text="Movies"/>
             </Link>
             <Link to="/tv_shows">
-              <Button className={Classes.MINIMAL} icon="video" text="TV Shows"/>
+              <Button minimal={true} icon="video" text="TV Shows"/>
             </Link>
             <Link to="/games">
-              <Button className={Classes.MINIMAL} icon="headset" text="Games"/>
+              <Button minimal={true} icon="headset" text="Games"/>
             </Link>
             <Link to="/books">
-              <Button className={Classes.MINIMAL} icon="book" text="Books"/>
+              <Button minimal={true} icon="book" text="Books"/>
             </Link>
           </NavbarGroup>
+          <NavbarGroup align={Alignment.RIGHT}>
+            <Popover {...baseProps}>
+              <Button minimal={true} icon="user" text=""/>
+            </Popover>
+          </NavbarGroup>
         </Navbar>
-        <Switch>
+        <Switch className={Classes.DARK}>
           <Route exact path="/">
             <Home />
           </Route>
