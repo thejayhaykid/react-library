@@ -5,16 +5,6 @@ import {
     Route,
     Link,
   } from "react-router-dom";
-import { Navbar, 
-  NavbarGroup, 
-  Alignment, 
-  NavbarHeading, 
-  NavbarDivider, 
-  Classes, 
-  Button, 
-  Popover,
-  Position 
-} from "@blueprintjs/core";
 
 import { Home } from '../containers/Home';
 import { Lost } from '../containers/Lost';
@@ -35,7 +25,7 @@ export default function LibRouter() {
   return (
     <Router>
       <div>
-        <Navbar className={ darkMode ? Classes.DARK : null } >
+        <Navbar >
           <NavbarGroup align={Alignment.LEFT}>
             <NavbarHeading>Home Media Library</NavbarHeading>
             <NavbarDivider />
@@ -61,7 +51,7 @@ export default function LibRouter() {
             </Popover>
           </NavbarGroup>
         </Navbar>
-        <Switch className={Classes.DARK}>
+        <Switch>
           <Route exact path="/">
             <Home />
           </Route>

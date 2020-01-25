@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Menu, MenuDivider, MenuItem } from "@blueprintjs/core";
 
 export const UserMenu = (props) => (
     <Menu className={props.className}>
