@@ -1,0 +1,17 @@
+.Navbar {
+	width: 100%;
+	display: flex;
+	z-index: 1100;
+	box-sizing: border-box;
+	flex-shrink: 0;
+    flex-direction: column;
+    background-color: #232323;
+    color: #efefef;
+    min-height: 3em;
+}
+
+.Navbar-Item {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}

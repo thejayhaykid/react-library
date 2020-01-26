@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from "axios";
 
-export const Home = () => {  
-    return (
-      <div>
-          <h1>Welcome to Home</h1>
-      </div>
-    );
-  };
+export const Home = () => {
+  const [state, setState] = useState('');
+
+  useEffect(() => {
+    axios.get('/api/')
+      .then(res => setState(res.data));
+  }, []);
+
+  return (
+    <div className="main-body">
+        <h1>Welcome to Home</h1>
+        <p>{state}</p>
+    </div>
+  );
+};
