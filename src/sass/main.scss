@@ -1,8 +1,7 @@
-@import './darkColors';
-@import './lightColors';
-@import './header';
+@import url('https://fonts.googleapis.com/css?family=Signika&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 
-@mixin theme($light-theme: true) {
+/*@mixin theme($light-theme: true) {
     @if $light-theme {
         background: lighten($primary-color, 100%);
         color: darken($text-color, 100%);
@@ -10,4 +9,13 @@
         background: darken($primary-color, 100%);
         color: lighten($text-color, 100%);
     }
+}*/
+
+body {
+    margin: 0px;
+}
+
+.main-body {
+    margin: 20em;
+    padding: 5em;
 }
