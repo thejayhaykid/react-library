@@ -5,7 +5,9 @@ export const Navbar = () => {
   return (
     <div className="Navbar">
       <nav>
-        <span className="Navbar-Item">Home Library App</span>
+        <ul>
+          <li className="Navbar-Item navbar-container-left">Home Library App</li>
+        </ul>
       </nav>
     </div>
   );
