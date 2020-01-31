@@ -6,3 +6,5 @@ CREATE TABLE users (
   date_created DATE,
   last_login DATE
 );
+
+CREATE TABLE 

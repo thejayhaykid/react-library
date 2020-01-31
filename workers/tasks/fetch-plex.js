@@ -5,7 +5,7 @@ var moment = require('moment');
 // const setAsync = promisify(client.set).bind(client);
 
 async function fetchPlex() {
-    const time = moment().format('MMMM Do YYYY, h:m:ss a');
+    const time = moment().format('MMMM Do YYYY, h:mm:ss a');
     console.log(`${time} Format Plex`);
 }
 

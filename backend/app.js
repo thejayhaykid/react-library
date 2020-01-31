@@ -10,6 +10,7 @@ require('dotenv').config();
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var movieRouter = require('./routes/movie');
+const { User, Movie } = require('./sequelize');
 
 var app = express();
 
