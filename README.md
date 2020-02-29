@@ -1,4 +1,4 @@
-# React Version of Library App
+# Athenaeum
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
